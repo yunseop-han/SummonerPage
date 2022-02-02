@@ -15,6 +15,10 @@
 		07440E4D27AA88BD00C9405A /* SummonerPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E4C27AA88BD00C9405A /* SummonerPageTests.swift */; };
 		07440E5727AA88BD00C9405A /* SummonerPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E5627AA88BD00C9405A /* SummonerPageUITests.swift */; };
 		07440E5927AA88BD00C9405A /* SummonerPageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E5827AA88BD00C9405A /* SummonerPageUITestsLaunchTests.swift */; };
+		07440E6627AA8ED500C9405A /* SummonerViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E6527AA8ED500C9405A /* SummonerViewReactor.swift */; };
+		07440E6A27AA8F4400C9405A /* Summoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E6927AA8F4400C9405A /* Summoner.swift */; };
+		07440E6C27AA8F4D00C9405A /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E6B27AA8F4D00C9405A /* League.swift */; };
+		07440E6E27AA8F6F00C9405A /* Tier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E6D27AA8F6F00C9405A /* Tier.swift */; };
 		257CE6CBE95F0FA5021EC470 /* Pods_SummonerPage_SummonerPageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAF2A88B94556007A7493E /* Pods_SummonerPage_SummonerPageUITests.framework */; };
 		2759693DBD349C7460733677 /* Pods_SummonerPageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3416F3AB41D3653DE0AF0E5 /* Pods_SummonerPageTests.framework */; };
 		CEF801DF8EE7E279A2AEFC3E /* Pods_SummonerPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB246742BE73EE6A2F3EFD8D /* Pods_SummonerPage.framework */; };
@@ -50,6 +54,10 @@
 		07440E5227AA88BD00C9405A /* SummonerPageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SummonerPageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07440E5627AA88BD00C9405A /* SummonerPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerPageUITests.swift; sourceTree = "<group>"; };
 		07440E5827AA88BD00C9405A /* SummonerPageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerPageUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		07440E6527AA8ED500C9405A /* SummonerViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerViewReactor.swift; sourceTree = "<group>"; };
+		07440E6927AA8F4400C9405A /* Summoner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summoner.swift; sourceTree = "<group>"; };
+		07440E6B27AA8F4D00C9405A /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
+		07440E6D27AA8F6F00C9405A /* Tier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier.swift; sourceTree = "<group>"; };
 		19B62DCD54707BA21773A4EA /* Pods-SummonerPage-SummonerPageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; path = "Target Support Files/Pods-SummonerPage-SummonerPageUITests/Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19B74D544078AD6EEA27D7D9 /* Pods-SummonerPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage.release.xcconfig"; path = "Target Support Files/Pods-SummonerPage/Pods-SummonerPage.release.xcconfig"; sourceTree = "<group>"; };
 		76DAF2A88B94556007A7493E /* Pods_SummonerPage_SummonerPageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummonerPage_SummonerPageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,8 +122,10 @@
 		07440E3427AA88BC00C9405A /* SummonerPage */ = {
 			isa = PBXGroup;
 			children = (
+				07440E6727AA8F3100C9405A /* Domain */,
 				07440E3527AA88BC00C9405A /* AppDelegate.swift */,
 				07440E3927AA88BC00C9405A /* SummonerViewController.swift */,
+				07440E6527AA8ED500C9405A /* SummonerViewReactor.swift */,
 				07440E3B27AA88BC00C9405A /* Main.storyboard */,
 				07440E3E27AA88BD00C9405A /* Assets.xcassets */,
 				07440E4027AA88BD00C9405A /* LaunchScreen.storyboard */,
@@ -141,6 +151,24 @@
 			path = SummonerPageUITests;
 			sourceTree = "<group>";
 		};
+		07440E6727AA8F3100C9405A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				07440E6827AA8F3900C9405A /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		07440E6827AA8F3900C9405A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				07440E6927AA8F4400C9405A /* Summoner.swift */,
+				07440E6B27AA8F4D00C9405A /* League.swift */,
+				07440E6D27AA8F6F00C9405A /* Tier.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1A93A406A0C7C2B9EFF2CF77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +189,6 @@
 				A205C85555CBF9A3548A8F9F /* Pods-SummonerPageTests.debug.xcconfig */,
 				A5784A71CF8536E8636AB018 /* Pods-SummonerPageTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -405,7 +432,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				07440E3A27AA88BC00C9405A /* SummonerViewController.swift in Sources */,
+				07440E6627AA8ED500C9405A /* SummonerViewReactor.swift in Sources */,
 				07440E3627AA88BC00C9405A /* AppDelegate.swift in Sources */,
+				07440E6E27AA8F6F00C9405A /* Tier.swift in Sources */,
+				07440E6C27AA8F4D00C9405A /* League.swift in Sources */,
+				07440E6A27AA8F4400C9405A /* Summoner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
