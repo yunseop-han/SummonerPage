@@ -41,14 +41,28 @@ class SummonerHeaderView: UIView, View {
         $0.setTitleColor(.black, for: .normal)
     }
     
-    let leagueCollectionView = UIView().then {
-        $0.backgroundColor = .red
-    }
+    lazy var leagueCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout().then {
+            $0.scrollDirection = .horizontal
+            $0.minimumInteritemSpacing = 8
+            $0.estimatedItemSize = .init(width: UIScreen.main.bounds.width * 0.85,
+                                         height: 100)
+        }
+        
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
+            $0.register(LeagueCell.self, forCellWithReuseIdentifier: "test")
+            $0.backgroundColor = .clear
+            $0.contentInset = .init(top: 24, left: 16, bottom: 16, right: 16)
+            $0.showsHorizontalScrollIndicator = false
+        }
+        
+        return view
+    }()
     
     init() {
         super.init(frame: .zero)
         
-        backgroundColor = .cyan
+        backgroundColor = .init(red: 247 / 255, green: 247 / 255, blue: 249 / 255, alpha: 1)
         
         addSubview(profileImageView)
         addSubview(levelLabel)
@@ -81,6 +95,15 @@ class SummonerHeaderView: UIView, View {
             .bind(to: levelLabel.rx.text)
             .disposed(by: disposeBag)
         
+        reactor.state
+            .map { $0.summoner.leagues }
+            .bind(to: leagueCollectionView.rx.items) { collectionView, index, league in
+                let indexPath = IndexPath(item: index, section: 0)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "test", for: indexPath) as! LeagueCell
+                cell.reactor = LeagueCellReactor(league: league)
+                
+                return cell
+            }.disposed(by: disposeBag)
     }
     
     func setupConstraints() {
@@ -88,6 +111,10 @@ class SummonerHeaderView: UIView, View {
             make.height.width.equalTo(88)
             make.leading.equalToSuperview().offset(12)
             make.top.equalToSuperview().offset(24)
+        }
+        
+        levelLabel.snp.makeConstraints { make in
+            make.trailing.bottom.equalTo(profileImageView)
         }
         
         summonerNameLabel.snp.makeConstraints { make in
@@ -103,13 +130,9 @@ class SummonerHeaderView: UIView, View {
         
         leagueCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(profileImageView.snp.bottom).offset(24)
-            make.height.equalTo(100)
-            make.bottom.equalToSuperview().inset(16)
-        }
-        
-        levelLabel.snp.makeConstraints { make in
-            make.trailing.bottom.equalTo(profileImageView)
+            make.top.equalTo(profileImageView.snp.bottom)
+            make.height.equalTo(140)
+            make.bottom.equalToSuperview()
         }
     }
 }
