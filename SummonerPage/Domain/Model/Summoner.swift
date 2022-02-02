@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Summoner: Codable {
+    let name: String
+    let level: Int
+    let profileImageUrl: String
+    let profileBorderImageUrl: String
+    let url: String
+    let leagues: [League]
+}

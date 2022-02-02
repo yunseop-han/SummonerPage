@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct League: Codable {
+    let wins: Int
+    let losses: Int
+    let tierRank: Tier
+}
