@@ -8,6 +8,9 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - SDWebImage (5.12.3):
+    - SDWebImage/Core (= 5.12.3)
+  - SDWebImage/Core (5.12.3)
   - SnapKit (5.0.1)
   - Then (2.7.0)
   - WeakMapTable (1.2.0)
@@ -16,6 +19,7 @@ DEPENDENCIES:
   - ReactorKit
   - RxCocoa
   - RxSwift
+  - SDWebImage
   - SnapKit
   - Then
 
@@ -25,6 +29,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SDWebImage
     - SnapKit
     - Then
     - WeakMapTable
@@ -34,10 +39,11 @@ SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 258a390c7c2f592720af18d4051fb8aa1817a3db
+PODFILE CHECKSUM: 5c7a3b0f6957ec83e223e08e8b41301779f16740
 
 COCOAPODS: 1.11.2

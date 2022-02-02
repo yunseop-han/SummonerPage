@@ -12,7 +12,8 @@ target 'SummonerPage' do
   pod 'ReactorKit'
   pod 'Then'
   pod 'SnapKit'
-
+  pod 'SDWebImage'
+  
   target 'SummonerPageTests' do
     inherit! :search_paths
     # Pods for testing
