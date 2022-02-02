@@ -20,6 +20,8 @@
 		07440E6E27AA8F6F00C9405A /* Tier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E6D27AA8F6F00C9405A /* Tier.swift */; };
 		07440E7427AA91BB00C9405A /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7327AA91BB00C9405A /* League.swift */; };
 		07440E7627AA933200C9405A /* SummonerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7527AA933200C9405A /* SummonerHeaderView.swift */; };
+		07440E7927AAA6DD00C9405A /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7827AAA6DD00C9405A /* PaddingLabel.swift */; };
+		07440E7C27AAA87600C9405A /* SummonerHeaderViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7B27AAA87600C9405A /* SummonerHeaderViewReactor.swift */; };
 		257CE6CBE95F0FA5021EC470 /* Pods_SummonerPage_SummonerPageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAF2A88B94556007A7493E /* Pods_SummonerPage_SummonerPageUITests.framework */; };
 		2759693DBD349C7460733677 /* Pods_SummonerPageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3416F3AB41D3653DE0AF0E5 /* Pods_SummonerPageTests.framework */; };
 		CEF801DF8EE7E279A2AEFC3E /* Pods_SummonerPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB246742BE73EE6A2F3EFD8D /* Pods_SummonerPage.framework */; };
@@ -60,6 +62,8 @@
 		07440E6D27AA8F6F00C9405A /* Tier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier.swift; sourceTree = "<group>"; };
 		07440E7327AA91BB00C9405A /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		07440E7527AA933200C9405A /* SummonerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerHeaderView.swift; sourceTree = "<group>"; };
+		07440E7827AAA6DD00C9405A /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		07440E7B27AAA87600C9405A /* SummonerHeaderViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerHeaderViewReactor.swift; sourceTree = "<group>"; };
 		19B62DCD54707BA21773A4EA /* Pods-SummonerPage-SummonerPageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; path = "Target Support Files/Pods-SummonerPage-SummonerPageUITests/Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19B74D544078AD6EEA27D7D9 /* Pods-SummonerPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage.release.xcconfig"; path = "Target Support Files/Pods-SummonerPage/Pods-SummonerPage.release.xcconfig"; sourceTree = "<group>"; };
 		76DAF2A88B94556007A7493E /* Pods_SummonerPage_SummonerPageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummonerPage_SummonerPageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,7 @@
 				07440E6727AA8F3100C9405A /* Domain */,
 				07440E7127AA905000C9405A /* Presentable */,
 				07440E7227AA906A00C9405A /* SupportingFiles */,
+				07440E7827AAA6DD00C9405A /* PaddingLabel.swift */,
 			);
 			path = SummonerPage;
 			sourceTree = "<group>";
@@ -171,7 +176,7 @@
 			children = (
 				07440E3927AA88BC00C9405A /* SummonerViewController.swift */,
 				07440E6527AA8ED500C9405A /* SummonerViewReactor.swift */,
-				07440E7527AA933200C9405A /* SummonerHeaderView.swift */,
+				07440E7A27AAA86300C9405A /* SummonerHeaderView */,
 			);
 			path = Presentable;
 			sourceTree = "<group>";
@@ -186,6 +191,15 @@
 				07440E4327AA88BD00C9405A /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		07440E7A27AAA86300C9405A /* SummonerHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				07440E7527AA933200C9405A /* SummonerHeaderView.swift */,
+				07440E7B27AAA87600C9405A /* SummonerHeaderViewReactor.swift */,
+			);
+			path = SummonerHeaderView;
 			sourceTree = "<group>";
 		};
 		1A93A406A0C7C2B9EFF2CF77 /* Frameworks */ = {
@@ -454,6 +468,8 @@
 				07440E6627AA8ED500C9405A /* SummonerViewReactor.swift in Sources */,
 				07440E3627AA88BC00C9405A /* AppDelegate.swift in Sources */,
 				07440E7627AA933200C9405A /* SummonerHeaderView.swift in Sources */,
+				07440E7C27AAA87600C9405A /* SummonerHeaderViewReactor.swift in Sources */,
+				07440E7927AAA6DD00C9405A /* PaddingLabel.swift in Sources */,
 				07440E6E27AA8F6F00C9405A /* Tier.swift in Sources */,
 				07440E7427AA91BB00C9405A /* League.swift in Sources */,
 				07440E6A27AA8F4400C9405A /* Summoner.swift in Sources */,
