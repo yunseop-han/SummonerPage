@@ -18,13 +18,15 @@ class SummonerViewController: UIViewController, View {
     private let summonerView: SummonerHeaderView = .init()
     
     private lazy var tableView = UITableView().then {
+        $0.backgroundColor = .paleGrey
         $0.tableHeaderView = summonerView
+        $0.separatorStyle = .none
         $0.register(MatchCell.self, forCellReuseIdentifier: "test")
     }
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
+        view.backgroundColor = .paleGrey
         setupConstraints()
     }
     

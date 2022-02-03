@@ -24,7 +24,7 @@ class SummonerHeaderView: UIView, View {
         $0.font = .systemFont(ofSize: 12)
         $0.layer.cornerRadius = 12
         // TODO: change color
-        $0.backgroundColor = .darkGray
+        $0.backgroundColor = .darkGrey90
         $0.textColor = .white
         $0.paddingInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
     }
@@ -33,9 +33,10 @@ class SummonerHeaderView: UIView, View {
         $0.font = .systemFont(ofSize: 24, weight: .bold)
     }
     
-    let refreshButton = UIButton().then {
+    let refreshButton = RoundButton().then {
         $0.setTitle("전적갱신", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.setBackgroundColor(.softBlue, for: .normal)
     }
     
     lazy var leagueCollectionView: UICollectionView = {
@@ -59,7 +60,7 @@ class SummonerHeaderView: UIView, View {
     init() {
         super.init(frame: .zero)
         
-        backgroundColor = .init(red: 247 / 255, green: 247 / 255, blue: 249 / 255, alpha: 1)
+        backgroundColor = .paleGrey
         
         addSubview(profileImageView)
         addSubview(levelLabel)
@@ -121,6 +122,8 @@ class SummonerHeaderView: UIView, View {
         }
         
         refreshButton.snp.makeConstraints { make in
+            make.width.equalTo(97)
+            make.height.equalTo(40)
             make.leading.equalTo(summonerNameLabel)
             make.bottom.equalTo(profileImageView)
         }

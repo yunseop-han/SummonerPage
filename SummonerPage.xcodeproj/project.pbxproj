@@ -22,6 +22,8 @@
 		074308D427AC40ED003118B8 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D327AC40ED003118B8 /* ItemListView.swift */; };
 		074308D627AC42E2003118B8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D527AC42E2003118B8 /* UIImageExtensions.swift */; };
 		074308D927AC4F0E003118B8 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D827AC4F0E003118B8 /* UIColorExtensions.swift */; };
+		074308DB27AC5027003118B8 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308DA27AC5027003118B8 /* UIButtonExtensions.swift */; };
+		074308DD27AC5159003118B8 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308DC27AC5159003118B8 /* RoundButton.swift */; };
 		07440E3627AA88BC00C9405A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E3527AA88BC00C9405A /* AppDelegate.swift */; };
 		07440E3A27AA88BC00C9405A /* SummonerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E3927AA88BC00C9405A /* SummonerViewController.swift */; };
 		07440E3F27AA88BD00C9405A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07440E3E27AA88BD00C9405A /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		074308D327AC40ED003118B8 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		074308D527AC42E2003118B8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		074308D827AC4F0E003118B8 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		074308DA27AC5027003118B8 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		074308DC27AC5159003118B8 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		07440E3227AA88BC00C9405A /* SummonerPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummonerPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07440E3527AA88BC00C9405A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07440E3927AA88BC00C9405A /* SummonerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				07440E7F27AAC72600C9405A /* CALayerExtensions.swift */,
 				074308D527AC42E2003118B8 /* UIImageExtensions.swift */,
 				074308D827AC4F0E003118B8 /* UIColorExtensions.swift */,
+				074308DA27AC5027003118B8 /* UIButtonExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				07440E7127AA905000C9405A /* Presentable */,
 				07440E7227AA906A00C9405A /* SupportingFiles */,
 				07440E7827AAA6DD00C9405A /* PaddingLabel.swift */,
+				074308DC27AC5159003118B8 /* RoundButton.swift */,
 			);
 			path = SummonerPage;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 				07440E7927AAA6DD00C9405A /* PaddingLabel.swift in Sources */,
 				074308C127AC0A3C003118B8 /* Champion.swift in Sources */,
 				074308D227AC3BA8003118B8 /* TileImageView.swift in Sources */,
+				074308DB27AC5027003118B8 /* UIButtonExtensions.swift in Sources */,
 				074308BF27AC0A0D003118B8 /* Match.swift in Sources */,
 				074308C527AC0A58003118B8 /* Item.swift in Sources */,
 				074308D027AC1B0D003118B8 /* MatchCellReactor.swift in Sources */,
@@ -574,6 +581,7 @@
 				074308D427AC40ED003118B8 /* ItemListView.swift in Sources */,
 				074308CE27AC1AFC003118B8 /* ResultView.swift in Sources */,
 				07440E6E27AA8F6F00C9405A /* Tier.swift in Sources */,
+				074308DD27AC5159003118B8 /* RoundButton.swift in Sources */,
 				07440E8227AACA0200C9405A /* LeagueCellReactor.swift in Sources */,
 				074308C327AC0A4D003118B8 /* Spell.swift in Sources */,
 				074308B527ABF330003118B8 /* RoundImageView.swift in Sources */,

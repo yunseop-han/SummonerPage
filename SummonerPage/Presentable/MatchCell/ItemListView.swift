@@ -32,7 +32,7 @@ class ItemListView: UIStackView {
         
         (0..<5).forEach { _ in
             let imageview = UIImageView().then {
-                $0.image = .from(color: .blue)
+                $0.image = .from(color: .paleGreyTwo)
                 $0.layer.cornerRadius = 3
                 $0.layer.masksToBounds = true
             }

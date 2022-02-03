@@ -13,7 +13,7 @@ class ResultView: UIView {
     var match: Match? {
         didSet {
             guard let match = match else { return }
-            backgroundColor = match.isWin ? .red : .blue
+            backgroundColor = match.isWin ? .softBlue : .darkishPink
             resultLabel.text = match.isWin ? "승" : "패"
             let time = secondsToHoursMinutesSeconds(match.gameLength)
             timeLabel.text = "\(time.1):\(time.2)"

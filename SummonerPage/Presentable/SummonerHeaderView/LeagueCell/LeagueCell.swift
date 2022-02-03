@@ -19,9 +19,8 @@ class LeagueCell: UICollectionViewCell, View {
     private let leagueImageView = UIImageView()
     
     private let leagueNameLabel = UILabel().then {
-        // TODO: change color
-        $0.textColor = .systemBlue
-        $0.font = .init(name: "AppleSDGothicNeo-Regular", size: 12)
+        $0.textColor = .softBlue
+        $0.font = .systemFont(ofSize: 12)
     }
     
     private let tierLabel = UILabel().then {
@@ -44,8 +43,7 @@ class LeagueCell: UICollectionViewCell, View {
         super.init(frame: frame)
         contentView.layer.cornerRadius = 4
         contentView.clipsToBounds = true
-        let color = UIColor(red: 123 / 255, green: 133 / 255, blue: 142 / 255, alpha: 0.2)
-        layer.makeShadow(color: color, x: 0, y: 4, blur: 6, spread: 0)
+        layer.makeShadow(color: .steelGrey20, x: 0, y: 4, blur: 6, spread: 0)
         
         setupConstraints()
     }

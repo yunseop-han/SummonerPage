@@ -25,37 +25,50 @@ class MatchCell: UITableViewCell, View {
         $0.layer.borderColor = UIColor.white.cgColor
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 8
-        
-        
+        $0.font = .systemFont(ofSize: 10, weight: .bold)
         $0.textColor = .white
-        $0.backgroundColor = .black
         $0.paddingInsets = .init(top: 2, left: 4, bottom: 2, right: 4)
     }
     
     private var tileView = TileImageView()
     private var itemView = ItemListView()
-    
+
     private let multiKillLabel = PaddingLabel().then {
         $0.layer.cornerRadius = 10
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.orange.cgColor
-        $0.textColor = .orange
+        $0.layer.borderColor = UIColor.darkishPink.cgColor
+        $0.textColor = .darkishPink
         $0.font = .systemFont(ofSize: 10)
         $0.paddingInsets = .init(top: 4, left: 8, bottom: 3, right: 8)
     }
-    let KDALabel = UILabel()
-    let contributionRateLabel = UILabel()
-    
-    let typeLabel = UILabel().then {
-        $0.textAlignment = .right
+    private let KDALabel = UILabel().then {
+        // TODO: - AttributeString
+        $0.font = .systemFont(ofSize: 16, weight: .bold)
+    }
+    private let contributionRateLabel = UILabel().then {
+        $0.textColor = .gunmetal
         $0.font = .systemFont(ofSize: 12)
     }
-    let timeLabel = UILabel().then {
+    
+    private let typeLabel = UILabel().then {
         $0.textAlignment = .right
+        $0.textColor = .coolGrey
+        $0.font = .systemFont(ofSize: 12)
+    }
+    private let timeLabel = UILabel().then {
+        $0.textAlignment = .right
+        $0.textColor = .coolGrey
+        $0.font = .systemFont(ofSize: 12)
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        layer.makeShadow(color: .steelGrey.withAlphaComponent(0.1),
+                         x: 0,
+                         y: 4,
+                         blur: 2,
+                         spread: 0)
         setupConstraints()
     }
     
@@ -83,10 +96,12 @@ class MatchCell: UITableViewCell, View {
         
         contentView.addSubview(itemView)
         contentView.addSubview(multiKillLabel)
+
         
         
         resultView.snp.makeConstraints { make in
-            make.leading.top.bottom.equalToSuperview()
+            make.top.equalToSuperview().offset(4)
+            make.leading.bottom.equalToSuperview()
             make.height.equalTo(104).priority(999)
             make.width.equalTo(40)
         }
@@ -165,7 +180,7 @@ class MatchCell: UITableViewCell, View {
         
         reactor.state
             .map { $0.match.stats.general.opScoreBadge }
-            .map { $0 == .ace ? .purple : .orange }
+            .map { $0 == .ace ? .periwinkle : .orangeYellow }
             .bind(to: MVPLabel.rx.backgroundColor)
             .disposed(by: disposeBag)
         
