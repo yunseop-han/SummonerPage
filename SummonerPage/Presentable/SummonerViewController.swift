@@ -12,25 +12,12 @@ import RxSwift
 import RxCocoa
 
 class SummonerViewController: UIViewController, View {
-    var disposeBag: DisposeBag = DisposeBag()
-    
     typealias Reactor = SummonerViewReactor
     
-    let summonerView: SummonerHeaderView = {
-        var view = SummonerHeaderView()
-        let league = [League(wins: 99, losses: 800, tierRank: Tier(name: "솔랭", tier: "Diamond", tierDivision: "Diamond", string: "Diamond (736LP)", shortString: "D1", imageUrl: "https://opgg-static.akamaized.net/images/medals/diamond_1.png", lp: 736, tierRankPoint: 327)), League(wins: 99, losses: 800, tierRank: Tier(name: "솔랭", tier: "Diamond", tierDivision: "Diamond", string: "Diamond (736LP)", shortString: "D1", imageUrl: "https://opgg-static.akamaized.net/images/medals/diamond_1.png", lp: 736, tierRankPoint: 327))]
-        view.reactor = SummonerHeaderViewReactor(summoner: Summoner(name: "gentory",
-                                                                    level: 120,
-                                                                    profileImageUrl: "https://opgg-static.akamaized.net/images/profile_icons/profileIcon1625.jpg",
-                                                                    profileBorderImageUrl: "https://opgg-static.akamaized.net/images/borders2/challenger.png",
-                                                                    url: "https://www.op.gg/summoner/userName=genetory",
-                                                                    leagues: league))
-        return view
-
-    }()
+    var disposeBag: DisposeBag = .init()
+    private let summonerView: SummonerHeaderView = .init()
     
-    lazy var tableView = UITableView().then {
-        $0.backgroundColor = .red
+    private lazy var tableView = UITableView().then {
         $0.tableHeaderView = summonerView
     }
     
@@ -40,7 +27,7 @@ class SummonerViewController: UIViewController, View {
         setupConstraints()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
@@ -57,7 +44,24 @@ class SummonerViewController: UIViewController, View {
     }
     
     func bind(reactor: SummonerViewReactor) {
+        // Action
+        Observable.just(Void())
+            .map { Reactor.Action.refresh }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
         
+        summonerView
+            .refreshButton.rx.tap
+            .map { Reactor.Action.refresh}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        // State
+        reactor.state
+            .compactMap { $0.summoner }
+            .map { SummonerHeaderViewReactor(summoner: $0) }
+            .bind(to: summonerView.rx.reactor )
+            .disposed(by: disposeBag)
     }
 }
 
