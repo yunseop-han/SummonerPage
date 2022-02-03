@@ -18,10 +18,7 @@ class SummonerHeaderView: UIView, View {
     
     typealias Reactor = SummonerHeaderViewReactor
     
-    let profileImageView = UIImageView().then {
-        $0.layer.cornerRadius = 44
-        $0.layer.masksToBounds = true
-    }
+    let profileImageView = RoundImageView()
     
     let levelLabel = PaddingLabel().then {
         $0.font = .systemFont(ofSize: 12)
