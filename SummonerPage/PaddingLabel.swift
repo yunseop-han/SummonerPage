@@ -11,6 +11,12 @@ import UIKit
 class PaddingLabel: UILabel {
     var paddingInsets: UIEdgeInsets = .zero
     
+    override var text: String? {
+        didSet {
+            isHidden = text?.isEmpty ?? true
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.masksToBounds = true

@@ -19,6 +19,7 @@ class SummonerViewController: UIViewController, View {
     
     private lazy var tableView = UITableView().then {
         $0.tableHeaderView = summonerView
+        $0.register(MatchCell.self, forCellReuseIdentifier: "test")
     }
     
     init() {
@@ -62,6 +63,14 @@ class SummonerViewController: UIViewController, View {
             .map { SummonerHeaderViewReactor(summoner: $0) }
             .bind(to: summonerView.rx.reactor )
             .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.games }
+            .bind(to: tableView.rx.items) { tableView, index, element in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "test") as! MatchCell
+                cell.reactor = MatchCellReactor(match: element)
+                return cell
+            }.disposed(by: disposeBag)
     }
 }
 

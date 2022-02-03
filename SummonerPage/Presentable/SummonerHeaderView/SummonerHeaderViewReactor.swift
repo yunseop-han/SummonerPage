@@ -9,8 +9,8 @@ import Foundation
 import ReactorKit
 
 class SummonerHeaderViewReactor: Reactor {
+    typealias Action = NoAction
     
-    enum Action {}
     struct State {
         var summoner: Summoner
     }

@@ -9,9 +9,9 @@ import Foundation
 import ReactorKit
 
 class LeagueCellReactor: Reactor {
-    var initialState: State
+    typealias Action = NoAction
     
-    enum Action {}
+    var initialState: State
     
     struct State {
         let league: League
