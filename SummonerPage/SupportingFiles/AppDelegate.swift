@@ -14,9 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootViewController = SummonerViewController()
-        rootViewController.reactor = SummonerViewReactor()
-        window?.rootViewController = UINavigationController(rootViewController: rootViewController)
+        let summonerViewController = SummonerViewController()
+        summonerViewController.reactor = SummonerViewReactor()
+        
+        let rootViewController: UINavigationController = .init(rootViewController: summonerViewController)
+        rootViewController.setNavigationBarHidden(true, animated: false)
+        
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
         return true
