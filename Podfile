@@ -13,6 +13,7 @@ target 'SummonerPage' do
   pod 'Then'
   pod 'SnapKit'
   pod 'SDWebImage'
+  pod 'Moya/RxSwift'
   
   target 'SummonerPageTests' do
     inherit! :search_paths

@@ -1,4 +1,10 @@
 PODS:
+  - Alamofire (5.5.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - ReactorKit (3.2.0):
     - RxSwift (~> 6.0)
     - WeakMapTable (~> 1.1)
@@ -16,6 +22,7 @@ PODS:
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
+  - Moya/RxSwift
   - ReactorKit
   - RxCocoa
   - RxSwift
@@ -25,6 +32,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - Moya
     - ReactorKit
     - RxCocoa
     - RxRelay
@@ -35,6 +44,8 @@ SPEC REPOS:
     - WeakMapTable
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -44,6 +55,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 5c7a3b0f6957ec83e223e08e8b41301779f16740
+PODFILE CHECKSUM: ba3842ddfcea6d22d271285a2ca11e18a1e9df40
 
 COCOAPODS: 1.11.2
