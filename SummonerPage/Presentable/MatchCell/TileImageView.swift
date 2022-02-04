@@ -6,48 +6,44 @@
 //
 
 import UIKit
+import Then
+import SDWebImage
 
 class TileImageView: UIStackView {
-    var match: Match? {
+    
+    var imageUrls: [[String]] = [] {
         didSet {
-            guard let match = match else { return }
-
-            match.spells.forEach {
-                let imageView = UIImageView()
-                imageView.sd_setImage(with: URL(string: $0.imageUrl))
-                spellStackView.addArrangedSubview(imageView)
-            }
-            
-            match.peak.forEach {
-                let imageView = UIImageView()
-                imageView.sd_setImage(with: URL(string: $0))
-                luneStackView.addArrangedSubview(imageView)
-            }
+            removeAllArangeSubviews()
+            makeImageView(imageUrls: imageUrls)
         }
     }
     
-    private let spellStackView = UIStackView().then {
-        $0.distribution = .fillEqually
-        $0.spacing = 2
-        $0.axis = .vertical
-    }
-
-    private let luneStackView = UIStackView().then {
-        $0.distribution = .fillEqually
-        $0.spacing = 2
-        $0.axis = .vertical
-    }
-
     init() {
         super.init(frame: .zero)
         axis = .horizontal
         distribution = .fillEqually
         spacing = 2
-        addArrangedSubview(spellStackView)
-        addArrangedSubview(luneStackView)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func makeImageView(imageUrls: [[String]]) {
+        for urls in imageUrls {
+            let stackView = UIStackView().then {
+                $0.distribution = .fillEqually
+                $0.spacing = 2
+                $0.axis = .vertical
+            }
+            
+            for url in urls {
+                let imageView = UIImageView().then {
+                    $0.sd_setImage(with: URL(string: url))
+                }
+                stackView.addArrangedSubview(imageView)
+            }
+            addArrangedSubview(stackView)
+        }
     }
 }

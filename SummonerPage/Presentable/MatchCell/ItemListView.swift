@@ -12,15 +12,8 @@ import Then
 class ItemListView: UIStackView {
     var items: [Item] = [] {
         didSet {
-            guard let imageView = arrangedSubviews.last as? UIImageView else {
-                return
-            }
-            imageView.sd_setImage(with: URL(string: items.removeLast().imageUrl))
-            items.enumerated().forEach { (index, item) in
-                guard let imageView = arrangedSubviews[index] as? UIImageView else { return }
-                
-                imageView.sd_setImage(with: URL(string: item.imageUrl))
-            }
+            removeAllArangeSubviews()
+            makeItemLists(items: items)
         }
     }
     
@@ -29,21 +22,33 @@ class ItemListView: UIStackView {
         spacing = 2
         axis = .horizontal
         distribution = .fillEqually
-        
-        (0..<5).forEach { _ in
-            let imageview = UIImageView().then {
-                $0.image = .from(color: .paleGreyTwo)
-                $0.layer.cornerRadius = 3
-                $0.layer.masksToBounds = true
-            }
-            addArrangedSubview(imageview)
-        }
-        
-        addArrangedSubview(RoundImageView())
-        
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func makeItemLists(items: [Item]) {
+        var items = items
+        let trinket = items.removeLast()
+        
+        let placeholderImage: UIImage = .from(color: .paleGrey)
+        let itemSize = 6
+        for index in 0..<itemSize {
+            let imageView = UIImageView().then {
+                let imageUrl = items[safe: index]?.imageUrl ?? ""
+                $0.sd_setImage(with: URL(string: imageUrl),
+                               placeholderImage: placeholderImage)
+                $0.layer.cornerRadius = 3
+                $0.layer.masksToBounds = true
+            }
+            addArrangedSubview(imageView)
+        }
+        
+        let trinketImageView = RoundImageView().then {
+            $0.sd_setImage(with: URL(string: trinket.imageUrl),
+                           placeholderImage: placeholderImage)
+        }
+        addArrangedSubview(trinketImageView)
     }
 }

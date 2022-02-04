@@ -14,13 +14,12 @@ import RxSwift
 import RxCocoa
 
 class SummonerHeaderView: UIView, View {
+    typealias Reactor = SummonerHeaderViewReactor
     var disposeBag: DisposeBag = DisposeBag()
     
-    typealias Reactor = SummonerHeaderViewReactor
+    private let profileImageView = RoundImageView()
     
-    let profileImageView = RoundImageView()
-    
-    let levelLabel = PaddingLabel().then {
+    private let levelLabel = PaddingLabel().then {
         $0.font = .systemFont(ofSize: 12)
         $0.layer.cornerRadius = 12
         // TODO: change color
@@ -29,7 +28,7 @@ class SummonerHeaderView: UIView, View {
         $0.paddingInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)
     }
     
-    let summonerNameLabel = UILabel().then {
+    private let summonerNameLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 24, weight: .bold)
     }
     
@@ -39,7 +38,7 @@ class SummonerHeaderView: UIView, View {
         $0.setBackgroundColor(.softBlue, for: .normal)
     }
     
-    lazy var leagueCollectionView: UICollectionView = {
+    private lazy var leagueCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout().then {
             $0.scrollDirection = .horizontal
             $0.minimumInteritemSpacing = 8
@@ -59,15 +58,7 @@ class SummonerHeaderView: UIView, View {
     
     init() {
         super.init(frame: .zero)
-        
         backgroundColor = .paleGrey
-        
-        addSubview(profileImageView)
-        addSubview(levelLabel)
-        
-        addSubview(summonerNameLabel)
-        addSubview(refreshButton)
-        addSubview(leagueCollectionView)
         
         setupConstraints()
     }
@@ -105,6 +96,13 @@ class SummonerHeaderView: UIView, View {
     }
     
     func setupConstraints() {
+        addSubview(profileImageView)
+        addSubview(levelLabel)
+        
+        addSubview(summonerNameLabel)
+        addSubview(refreshButton)
+        addSubview(leagueCollectionView)
+        
         profileImageView.snp.makeConstraints { make in
             make.height.width.equalTo(88)
             make.leading.equalToSuperview().offset(12)

@@ -21,6 +21,7 @@ class SummonerViewController: UIViewController, View {
         $0.backgroundColor = .paleGrey
         $0.tableHeaderView = summonerView
         $0.separatorStyle = .none
+        $0.estimatedRowHeight = 100
         $0.register(MatchCell.self, forCellReuseIdentifier: "test")
     }
     
@@ -39,6 +40,7 @@ class SummonerViewController: UIViewController, View {
         
         summonerView.snp.makeConstraints { make in
             make.width.equalTo(tableView.snp.width)
+            make.top.leading.trailing.equalToSuperview()
         }
     }
     
@@ -56,6 +58,16 @@ class SummonerViewController: UIViewController, View {
         summonerView
             .refreshButton.rx.tap
             .map { Reactor.Action.refresh}
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        tableView.rx
+            .contentOffset
+            .filter { [weak self] in
+                guard let self = self else { return false }
+                return $0.y > self.tableView.contentSize.height - self.tableView.frame.height
+            }.map { _ in Reactor.Action.loadMore }
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         

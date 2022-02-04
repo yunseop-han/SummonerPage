@@ -20,10 +20,14 @@
 		074308D027AC1B0D003118B8 /* MatchCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308CF27AC1B0D003118B8 /* MatchCellReactor.swift */; };
 		074308D227AC3BA8003118B8 /* TileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D127AC3BA8003118B8 /* TileImageView.swift */; };
 		074308D427AC40ED003118B8 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D327AC40ED003118B8 /* ItemListView.swift */; };
-		074308D627AC42E2003118B8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D527AC42E2003118B8 /* UIImageExtensions.swift */; };
+		074308D627AC42E2003118B8 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D527AC42E2003118B8 /* UIImage+Color.swift */; };
 		074308D927AC4F0E003118B8 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308D827AC4F0E003118B8 /* UIColorExtensions.swift */; };
-		074308DB27AC5027003118B8 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308DA27AC5027003118B8 /* UIButtonExtensions.swift */; };
+		074308DB27AC5027003118B8 /* UIButton+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308DA27AC5027003118B8 /* UIButton+BackgroundColor.swift */; };
 		074308DD27AC5159003118B8 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308DC27AC5159003118B8 /* RoundButton.swift */; };
+		074308E127AD2292003118B8 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308E027AD2292003118B8 /* Collection+Safe.swift */; };
+		074308E327AD230C003118B8 /* UIStackView+ArangeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308E227AD230C003118B8 /* UIStackView+ArangeSubView.swift */; };
+		074308E527AD2957003118B8 /* LeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308E427AD2957003118B8 /* LeadingView.swift */; };
+		074308E827AD72BE003118B8 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074308E727AD72BE003118B8 /* GeneralView.swift */; };
 		07440E3627AA88BC00C9405A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E3527AA88BC00C9405A /* AppDelegate.swift */; };
 		07440E3A27AA88BC00C9405A /* SummonerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E3927AA88BC00C9405A /* SummonerViewController.swift */; };
 		07440E3F27AA88BD00C9405A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07440E3E27AA88BD00C9405A /* Assets.xcassets */; };
@@ -39,7 +43,7 @@
 		07440E7927AAA6DD00C9405A /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7827AAA6DD00C9405A /* PaddingLabel.swift */; };
 		07440E7C27AAA87600C9405A /* SummonerHeaderViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7B27AAA87600C9405A /* SummonerHeaderViewReactor.swift */; };
 		07440E7E27AAA8FE00C9405A /* LeagueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7D27AAA8FE00C9405A /* LeagueCell.swift */; };
-		07440E8027AAC72600C9405A /* CALayerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7F27AAC72600C9405A /* CALayerExtensions.swift */; };
+		07440E8027AAC72600C9405A /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */; };
 		07440E8227AACA0200C9405A /* LeagueCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E8127AACA0200C9405A /* LeagueCellReactor.swift */; };
 		257CE6CBE95F0FA5021EC470 /* Pods_SummonerPage_SummonerPageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAF2A88B94556007A7493E /* Pods_SummonerPage_SummonerPageUITests.framework */; };
 		2759693DBD349C7460733677 /* Pods_SummonerPageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3416F3AB41D3653DE0AF0E5 /* Pods_SummonerPageTests.framework */; };
@@ -77,10 +81,14 @@
 		074308CF27AC1B0D003118B8 /* MatchCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCellReactor.swift; sourceTree = "<group>"; };
 		074308D127AC3BA8003118B8 /* TileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageView.swift; sourceTree = "<group>"; };
 		074308D327AC40ED003118B8 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
-		074308D527AC42E2003118B8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		074308D527AC42E2003118B8 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		074308D827AC4F0E003118B8 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		074308DA27AC5027003118B8 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		074308DA27AC5027003118B8 /* UIButton+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BackgroundColor.swift"; sourceTree = "<group>"; };
 		074308DC27AC5159003118B8 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		074308E027AD2292003118B8 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
+		074308E227AD230C003118B8 /* UIStackView+ArangeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+ArangeSubView.swift"; sourceTree = "<group>"; };
+		074308E427AD2957003118B8 /* LeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingView.swift; sourceTree = "<group>"; };
+		074308E727AD72BE003118B8 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		07440E3227AA88BC00C9405A /* SummonerPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummonerPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07440E3527AA88BC00C9405A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07440E3927AA88BC00C9405A /* SummonerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +108,7 @@
 		07440E7827AAA6DD00C9405A /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		07440E7B27AAA87600C9405A /* SummonerHeaderViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerHeaderViewReactor.swift; sourceTree = "<group>"; };
 		07440E7D27AAA8FE00C9405A /* LeagueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCell.swift; sourceTree = "<group>"; };
-		07440E7F27AAC72600C9405A /* CALayerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtensions.swift; sourceTree = "<group>"; };
+		07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		07440E8127AACA0200C9405A /* LeagueCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCellReactor.swift; sourceTree = "<group>"; };
 		19B62DCD54707BA21773A4EA /* Pods-SummonerPage-SummonerPageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; path = "Target Support Files/Pods-SummonerPage-SummonerPageUITests/Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19B74D544078AD6EEA27D7D9 /* Pods-SummonerPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage.release.xcconfig"; path = "Target Support Files/Pods-SummonerPage/Pods-SummonerPage.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,10 +169,12 @@
 			isa = PBXGroup;
 			children = (
 				074308CA27AC0EA1003118B8 /* MatchCell.swift */,
+				074308E727AD72BE003118B8 /* GeneralView.swift */,
 				074308CD27AC1AFC003118B8 /* ResultView.swift */,
 				074308CF27AC1B0D003118B8 /* MatchCellReactor.swift */,
 				074308D127AC3BA8003118B8 /* TileImageView.swift */,
 				074308D327AC40ED003118B8 /* ItemListView.swift */,
+				074308E427AD2957003118B8 /* LeadingView.swift */,
 			);
 			path = MatchCell;
 			sourceTree = "<group>";
@@ -172,10 +182,12 @@
 		074308D727AC4309003118B8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				07440E7F27AAC72600C9405A /* CALayerExtensions.swift */,
-				074308D527AC42E2003118B8 /* UIImageExtensions.swift */,
+				07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */,
+				074308D527AC42E2003118B8 /* UIImage+Color.swift */,
 				074308D827AC4F0E003118B8 /* UIColorExtensions.swift */,
-				074308DA27AC5027003118B8 /* UIButtonExtensions.swift */,
+				074308DA27AC5027003118B8 /* UIButton+BackgroundColor.swift */,
+				074308E227AD230C003118B8 /* UIStackView+ArangeSubView.swift */,
+				074308E027AD2292003118B8 /* Collection+Safe.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,23 +573,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				074308D927AC4F0E003118B8 /* UIColorExtensions.swift in Sources */,
+				074308E527AD2957003118B8 /* LeadingView.swift in Sources */,
 				07440E3A27AA88BC00C9405A /* SummonerViewController.swift in Sources */,
 				074308C927AC0A81003118B8 /* Stats.swift in Sources */,
 				07440E6627AA8ED500C9405A /* SummonerViewReactor.swift in Sources */,
 				074308BB27ABF8C6003118B8 /* CodingTestAPI.swift in Sources */,
+				074308E827AD72BE003118B8 /* GeneralView.swift in Sources */,
 				07440E3627AA88BC00C9405A /* AppDelegate.swift in Sources */,
-				074308D627AC42E2003118B8 /* UIImageExtensions.swift in Sources */,
+				074308D627AC42E2003118B8 /* UIImage+Color.swift in Sources */,
 				07440E7627AA933200C9405A /* SummonerHeaderView.swift in Sources */,
 				07440E7E27AAA8FE00C9405A /* LeagueCell.swift in Sources */,
 				07440E7C27AAA87600C9405A /* SummonerHeaderViewReactor.swift in Sources */,
 				07440E7927AAA6DD00C9405A /* PaddingLabel.swift in Sources */,
 				074308C127AC0A3C003118B8 /* Champion.swift in Sources */,
 				074308D227AC3BA8003118B8 /* TileImageView.swift in Sources */,
-				074308DB27AC5027003118B8 /* UIButtonExtensions.swift in Sources */,
+				074308DB27AC5027003118B8 /* UIButton+BackgroundColor.swift in Sources */,
 				074308BF27AC0A0D003118B8 /* Match.swift in Sources */,
 				074308C527AC0A58003118B8 /* Item.swift in Sources */,
 				074308D027AC1B0D003118B8 /* MatchCellReactor.swift in Sources */,
-				07440E8027AAC72600C9405A /* CALayerExtensions.swift in Sources */,
+				07440E8027AAC72600C9405A /* CALayer+Shadow.swift in Sources */,
+				074308E127AD2292003118B8 /* Collection+Safe.swift in Sources */,
+				074308E327AD230C003118B8 /* UIStackView+ArangeSubView.swift in Sources */,
 				074308D427AC40ED003118B8 /* ItemListView.swift in Sources */,
 				074308CE27AC1AFC003118B8 /* ResultView.swift in Sources */,
 				07440E6E27AA8F6F00C9405A /* Tier.swift in Sources */,
