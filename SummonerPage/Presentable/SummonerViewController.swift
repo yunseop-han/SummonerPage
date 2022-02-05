@@ -10,6 +10,7 @@ import ReactorKit
 import Then
 import RxSwift
 import RxCocoa
+import SnapKit
 
 class SummonerViewController: UIViewController, View {
     typealias Reactor = SummonerViewReactor
@@ -74,8 +75,9 @@ class SummonerViewController: UIViewController, View {
         // State
         Observable.zip(reactor.state.compactMap({ $0.summoner}),
                        reactor.state.compactMap({ $0.summary}),
-                       reactor.state.compactMap({ $0.champions}))
-            .map { SummonerHeaderViewReactor(summoner: $0, summary: $1, champions: $2) }
+                       reactor.state.compactMap({ $0.champions}),
+                       reactor.state.compactMap({ $0.positions}))
+            .map { SummonerHeaderViewReactor(summoner: $0, summary: $1, champions: $2, positions: $3) }
             .bind(to: summonerView.rx.reactor)
             .disposed(by: disposeBag)
         

@@ -14,6 +14,21 @@ struct Position: Codable, WinningRateStringConvertible {
         case top = "TOP"
         case adc = "ADC"
         case mid = "MID"
+        
+        var iconName: String {
+            switch self {
+            case .support:
+                return "iconLolSup"
+            case .jungle:
+                return "iconLolJng"
+            case .top:
+                return "iconLolTop"
+            case .adc:
+                return "iconLolBot"
+            case .mid:
+                return "iconLolMid"
+            }
+        }
     }
     let position: PositionType
     var games: Int

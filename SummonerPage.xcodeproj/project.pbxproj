@@ -53,6 +53,7 @@
 		07440E7E27AAA8FE00C9405A /* LeagueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7D27AAA8FE00C9405A /* LeagueCell.swift */; };
 		07440E8027AAC72600C9405A /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */; };
 		07440E8227AACA0200C9405A /* LeagueCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E8127AACA0200C9405A /* LeagueCellReactor.swift */; };
+		074EEA6C27AEB05D00E0197A /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EEA6B27AEB05D00E0197A /* PositionView.swift */; };
 		0791F97427ADC4620046F153 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0791F97327ADC4620046F153 /* Reusable.swift */; };
 		257CE6CBE95F0FA5021EC470 /* Pods_SummonerPage_SummonerPageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAF2A88B94556007A7493E /* Pods_SummonerPage_SummonerPageUITests.framework */; };
 		2759693DBD349C7460733677 /* Pods_SummonerPageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3416F3AB41D3653DE0AF0E5 /* Pods_SummonerPageTests.framework */; };
@@ -127,6 +128,7 @@
 		07440E7D27AAA8FE00C9405A /* LeagueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCell.swift; sourceTree = "<group>"; };
 		07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		07440E8127AACA0200C9405A /* LeagueCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCellReactor.swift; sourceTree = "<group>"; };
+		074EEA6B27AEB05D00E0197A /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
 		0791F97327ADC4620046F153 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		19B62DCD54707BA21773A4EA /* Pods-SummonerPage-SummonerPageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; path = "Target Support Files/Pods-SummonerPage-SummonerPageUITests/Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19B74D544078AD6EEA27D7D9 /* Pods-SummonerPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage.release.xcconfig"; path = "Target Support Files/Pods-SummonerPage/Pods-SummonerPage.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				074308E927AD8A3C003118B8 /* SummaryMatchsView.swift */,
 				074308F027ADA8CA003118B8 /* SummaryGeneralView.swift */,
 				074308EF27ADA8A3003118B8 /* MostChampionsView */,
+				074EEA6B27AEB05D00E0197A /* PositionView.swift */,
 			);
 			path = SummaryMatchesView;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				074308CE27AC1AFC003118B8 /* ResultView.swift in Sources */,
 				074308F127ADA8CA003118B8 /* SummaryGeneralView.swift in Sources */,
 				07440E6E27AA8F6F00C9405A /* Tier.swift in Sources */,
+				074EEA6C27AEB05D00E0197A /* PositionView.swift in Sources */,
 				074308DD27AC5159003118B8 /* RoundButton.swift in Sources */,
 				07440E8227AACA0200C9405A /* LeagueCellReactor.swift in Sources */,
 				074308C327AC0A4D003118B8 /* Spell.swift in Sources */,

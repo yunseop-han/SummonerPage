@@ -106,6 +106,11 @@ class SummonerHeaderView: UIView, View {
             .map { $0.champions }
             .bind(to: summaryMatchsView.rx.champions)
             .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.positions }
+            .bind(to: summaryMatchsView.rx.positions)
+            .disposed(by: disposeBag)
     }
     
     func setupConstraints() {

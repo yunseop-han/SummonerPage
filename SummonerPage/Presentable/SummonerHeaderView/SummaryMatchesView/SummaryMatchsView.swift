@@ -23,9 +23,14 @@ class SummaryMatchsView: UIView {
         }
     }
     
+    var positions: [Position] = [] {
+        didSet {
+            summaryLeadingView.positions = positions
+        }
+    }
     private let summaryGeneralView = SummaryGeneralView()
     private let summaryMostChampionView = MostChampionsView()
-    private let summaryLeadingView = UIView()
+    private let summaryLeadingView = PositionView()
     
     init() {
         super.init(frame: .zero)
@@ -41,6 +46,7 @@ class SummaryMatchsView: UIView {
     func setupConstraints() {
         addSubview(summaryGeneralView)
         addSubview(summaryMostChampionView)
+        addSubview(summaryLeadingView)
         
         summaryGeneralView.snp.makeConstraints { make in
             make.top.leading.bottom.equalToSuperview().inset(12)
@@ -52,6 +58,12 @@ class SummaryMatchsView: UIView {
             make.leading.equalTo(summaryGeneralView.snp.trailing).offset(10)
             make.width.equalTo(98)
             make.bottom.equalToSuperview().inset(12)
+        }
+        
+        summaryLeadingView.snp.makeConstraints { make in
+            make.top.equalTo(summaryMostChampionView)
+            make.leading.equalTo(summaryMostChampionView.snp.trailing).offset(10)
+            make.trailing.bottom.equalToSuperview()
         }
     }
 }

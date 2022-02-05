@@ -15,13 +15,15 @@ class SummonerHeaderViewReactor: Reactor {
         var summoner: Summoner
         var summary: Summary
         var champions: [Champion] = []
+        var positions: [Position] = []
     }
     
     var initialState: State
     
-    init(summoner: Summoner, summary: Summary, champions: [Champion]) {
+    init(summoner: Summoner, summary: Summary, champions: [Champion], positions: [Position]) {
         initialState = State(summoner: summoner,
                              summary: summary,
-                             champions: champions)
+                             champions: champions,
+                             positions: positions)
     }
 }
