@@ -22,7 +22,7 @@ class SummonerViewController: UIViewController, View {
         $0.tableHeaderView = summonerView
         $0.separatorStyle = .none
         $0.estimatedRowHeight = 100
-        $0.register(MatchCell.self, forCellReuseIdentifier: "test")
+        $0.register(MatchCell.self, forCellReuseIdentifier: MatchCell.reuseIdentifier)
     }
     
     init() {
@@ -72,16 +72,17 @@ class SummonerViewController: UIViewController, View {
             .disposed(by: disposeBag)
         
         // State
-        reactor.state
-            .compactMap { $0.summoner }
-            .map { SummonerHeaderViewReactor(summoner: $0) }
-            .bind(to: summonerView.rx.reactor )
+        Observable.zip(reactor.state.compactMap({ $0.summoner}),
+                       reactor.state.compactMap({ $0.summary}),
+                       reactor.state.compactMap({ $0.champions}))
+            .map { SummonerHeaderViewReactor(summoner: $0, summary: $1, champions: $2) }
+            .bind(to: summonerView.rx.reactor)
             .disposed(by: disposeBag)
         
         reactor.state
             .map { $0.games }
             .bind(to: tableView.rx.items) { tableView, index, element in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "test") as! MatchCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: MatchCell.reuseIdentifier) as! MatchCell
                 cell.reactor = MatchCellReactor(match: element)
                 return cell
             }.disposed(by: disposeBag)

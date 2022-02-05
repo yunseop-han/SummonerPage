@@ -125,11 +125,10 @@ class LeagueCell: UICollectionViewCell, View {
         
         reactor.state
             .map {
-                let wins = $0.league.wins
-                let losses = $0.league.losses
-                let record = Double(wins) / (Double(wins) + Double(losses)) * 100.0
+                let wins = $0.league.wins ?? 0
+                let losses = $0.league.losses ?? 0
                 
-                return "\(wins)승 \(losses)패 (\(Int(record))%)"
+                return "\(wins)승 \(losses)패 (\(Int($0.league.winningRate()))%)"
             }
             .bind(to: recordLabel.rx.text)
             .disposed(by: disposeBag)

@@ -47,7 +47,7 @@ class SummonerHeaderView: UIView, View {
         }
         
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
-            $0.register(LeagueCell.self, forCellWithReuseIdentifier: "test")
+            $0.register(LeagueCell.self, forCellWithReuseIdentifier: LeagueCell.reuseIdentifier)
             $0.backgroundColor = .clear
             $0.contentInset = .init(top: 24, left: 16, bottom: 16, right: 16)
             $0.showsHorizontalScrollIndicator = false
@@ -55,6 +55,8 @@ class SummonerHeaderView: UIView, View {
         
         return view
     }()
+    
+    private let summaryMatchsView = SummaryMatchsView()
     
     init() {
         super.init(frame: .zero)
@@ -88,11 +90,22 @@ class SummonerHeaderView: UIView, View {
             .map { $0.summoner.leagues }
             .bind(to: leagueCollectionView.rx.items) { collectionView, index, league in
                 let indexPath = IndexPath(item: index, section: 0)
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "test", for: indexPath) as! LeagueCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeagueCell.reuseIdentifier,
+                                                              for: indexPath) as! LeagueCell
                 cell.reactor = LeagueCellReactor(league: league)
                 
                 return cell
             }.disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.summary }
+            .bind(to: summaryMatchsView.rx.summary)
+            .disposed(by: disposeBag)
+        
+        reactor.state
+            .map { $0.champions }
+            .bind(to: summaryMatchsView.rx.champions)
+            .disposed(by: disposeBag)
     }
     
     func setupConstraints() {
@@ -102,6 +115,7 @@ class SummonerHeaderView: UIView, View {
         addSubview(summonerNameLabel)
         addSubview(refreshButton)
         addSubview(leagueCollectionView)
+        addSubview(summaryMatchsView)
         
         profileImageView.snp.makeConstraints { make in
             make.height.width.equalTo(88)
@@ -130,7 +144,12 @@ class SummonerHeaderView: UIView, View {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(profileImageView.snp.bottom)
             make.height.equalTo(140)
-            make.bottom.equalToSuperview()
+        }
+        
+        summaryMatchsView.snp.makeConstraints { make in
+            make.top.equalTo(leagueCollectionView.snp.bottom)
+            make.bottom.leading.trailing.equalToSuperview()
+            make.height.equalTo(90)
         }
     }
 }

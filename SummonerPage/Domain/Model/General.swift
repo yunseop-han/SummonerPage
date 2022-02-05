@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct General: Codable {
-    let kill: Int
-    let death: Int
-    let assist: Int
+struct General: Codable, KillsDeathsAssistsAttributeStringConvertible {
+    let kills: Int
+    let deaths: Int
+    let assists: Int
     let contributionForKillRate: String
     let largestMultiKillString: String
     let opScoreBadge: Badge
@@ -18,5 +18,12 @@ struct General: Codable {
     enum Badge: String, Codable {
         case ace = "ACE"
         case none = ""
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case kills = "kill"
+        case deaths = "death"
+        case assists = "assist"
+        case contributionForKillRate, largestMultiKillString, opScoreBadge
     }
 }

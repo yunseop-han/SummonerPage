@@ -13,11 +13,15 @@ class SummonerHeaderViewReactor: Reactor {
     
     struct State {
         var summoner: Summoner
+        var summary: Summary
+        var champions: [Champion] = []
     }
     
     var initialState: State
     
-    init(summoner: Summoner) {
-        initialState = State(summoner: summoner)
+    init(summoner: Summoner, summary: Summary, champions: [Champion]) {
+        initialState = State(summoner: summoner,
+                             summary: summary,
+                             champions: champions)
     }
 }

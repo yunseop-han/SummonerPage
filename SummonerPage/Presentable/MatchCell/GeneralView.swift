@@ -13,7 +13,7 @@ class GeneralView: UIView {
     var general: General? {
         didSet {
             guard let general = general else { return }
-            kdaLabel.text = "\(general.kill) / \(general.assist) / \(general.death)"
+            kdaLabel.attributedText = general.kdaAttributedString()
             contributionRateLabel.text = "킬관여 \(general.contributionForKillRate)"
         }
     }

@@ -22,4 +22,7 @@ struct Match: Codable {
 
 struct MatchResponse: Codable {
     let games: [Match]
+    let champions: [Champion]
+    let summary: Summary
+    let positions: [Position]
 }

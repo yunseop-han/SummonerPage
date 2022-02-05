@@ -47,6 +47,11 @@ class MatchCell: UITableViewCell, View {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        championImageView.image = nil
+    }
+    
     func bind(reactor: MatchCellReactor) {
 
         reactor.state
@@ -58,7 +63,7 @@ class MatchCell: UITableViewCell, View {
             .map { $0.match.champion.imageUrl }
             .map { URL(string: $0) }
             .bind { [weak self] in
-                self?.championImageView.sd_setImage(with: $0)
+                self?.championImageView.sd_setImage(with: $0, placeholderImage: .from(color: .red))
             }.disposed(by: disposeBag)
 
         reactor.state

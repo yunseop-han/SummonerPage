@@ -22,6 +22,9 @@ class SummonerViewReactor: Reactor {
         case setSummoner(Summoner)
         case setGames([Match])
         case appendGames([Match])
+        case setSummary(Summary)
+        case setChampions([Champion])
+        case setPositions([Position])
         case initDate
     }
     
@@ -30,25 +33,33 @@ class SummonerViewReactor: Reactor {
         var summoner: Summoner?
         var lastMatchCreatedDate: Int = 0
         var games: [Match] = []
+        var summary: Summary?
+        var champions: [Champion]?
+        var positions: [Position]?
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .refresh:
+            
+            let fetchMatches = fetchMatchs(name: currentState.user, createdData: 0)
+            
             return .concat([
                 Observable.just(.setUser(currentState.user)),
                 Observable.just(.initDate),
                 searchSummoner(query: currentState.user)
                     .map({ Mutation.setSummoner($0) }),
-                fetchMatchs(name: currentState.user, createdData: 0)
-                    .map({ Mutation.setGames($0) })
+                fetchMatches.map({ Mutation.setGames($0.games) }),
+                fetchMatches.map({ Mutation.setSummary($0.summary) }),
+                fetchMatches.map({ Mutation.setChampions($0.champions) }),
+                fetchMatches.map({ Mutation.setPositions($0.positions) })
             ])
             
         case .loadMore:
             return .concat([
                 fetchMatchs(name: currentState.user,
                             createdData: currentState.lastMatchCreatedDate)
-                    .map({ Mutation.appendGames($0) })
+                    .map({ Mutation.appendGames($0.games) })
             ])
         }
     }
@@ -72,6 +83,15 @@ class SummonerViewReactor: Reactor {
             newState.games.append(contentsOf: games)
             let lastDate = games.last?.createDate ?? 0
             newState.lastMatchCreatedDate = lastDate
+        
+        case .setSummary(let summary):
+            newState.summary = summary
+            
+        case .setChampions(let champions):
+            newState.champions = champions
+            
+        case .setPositions(let positions):
+            newState.positions = positions
             
         case .initDate:
             newState.lastMatchCreatedDate = 0
@@ -88,12 +108,11 @@ class SummonerViewReactor: Reactor {
             .asObservable()
     }
     
-    func fetchMatchs(name: String, createdData: Int) -> Observable<[Match]> {
+    func fetchMatchs(name: String, createdData: Int) -> Observable<MatchResponse> {
         return codingTestProvider.rx
             .request(.matches(name: name, createDate: createdData))
             .map(MatchResponse.self)
-            .debug()
-            .compactMap { $0.games }
+            .compactMap { $0 }
             .asObservable()
     }
 }
