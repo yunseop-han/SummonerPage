@@ -10,8 +10,6 @@ import ReactorKit
 import Moya
 
 class SummonerViewReactor: Reactor {
-    var initialState: State = State()
-    
     enum Action {
         case refresh
         case loadMore
@@ -36,6 +34,14 @@ class SummonerViewReactor: Reactor {
         var summary: Summary?
         var champions: [Champion]?
         var positions: [Position]?
+    }
+    
+    var initialState: State
+    private let apiProvider: MoyaProvider<CodingTest>
+    
+    init(apiProvider: MoyaProvider<CodingTest> = .init()) {
+        self.apiProvider = apiProvider
+        initialState = State()
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
@@ -101,7 +107,7 @@ class SummonerViewReactor: Reactor {
     }
     
     func searchSummoner(query: String) -> Observable<Summoner> {
-        return codingTestProvider.rx
+        return apiProvider.rx
             .request(.summoner(name: query))
             .map(SummonerResponse.self)
             .compactMap({ $0.summoner })
@@ -109,7 +115,7 @@ class SummonerViewReactor: Reactor {
     }
     
     func fetchMatchs(name: String, createdData: Int) -> Observable<MatchResponse> {
-        return codingTestProvider.rx
+        return apiProvider.rx
             .request(.matches(name: name, createDate: createdData))
             .map(MatchResponse.self)
             .compactMap { $0 }

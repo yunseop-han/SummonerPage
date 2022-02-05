@@ -16,9 +16,9 @@ class SummonerViewController: UIViewController, View {
     typealias Reactor = SummonerViewReactor
     
     var disposeBag: DisposeBag = .init()
-    private let summonerView: SummonerHeaderView = .init()
+    let summonerView: SummonerHeaderView = .init()
     
-    private lazy var tableView = UITableView().then {
+    lazy var tableView = UITableView().then {
         $0.backgroundColor = .paleGrey
         $0.tableHeaderView = summonerView
         $0.separatorStyle = .none

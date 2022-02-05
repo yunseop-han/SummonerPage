@@ -19,10 +19,3 @@ struct Match: Codable, Equatable {
     let gameType: String
     let stats: Stats
 }
-
-struct MatchResponse: Codable {
-    let games: [Match]
-    let champions: [Champion]
-    let summary: Summary
-    let positions: [Position]
-}

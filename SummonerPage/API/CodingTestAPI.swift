@@ -13,8 +13,6 @@ enum CodingTest {
     case matches(name: String, createDate: Int)
 }
 
-let codingTestProvider = MoyaProvider<CodingTest>()
-
 extension CodingTest: TargetType {
     var baseURL: URL { URL(string: "https://codingtest.op.gg/api")! }
     
@@ -43,4 +41,14 @@ extension CodingTest: TargetType {
     }
     
     var headers: [String : String]? { nil }
+    
+    var sampleData: Data {
+        switch self {
+        case .summoner(_):
+            return Bundle.jsonData(named: "SummonerResponse") ?? Data()
+            
+        case .matches(_, _):
+            return Bundle.jsonData(named: "MatchResponse") ?? Data()
+        }
+    }
 }

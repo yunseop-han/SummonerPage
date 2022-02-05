@@ -15,7 +15,3 @@ struct Summoner: Codable, Equatable {
     let url: String
     let leagues: [League]
 }
-
-struct SummonerResponse: Codable {
-    let summoner: Summoner
-}
