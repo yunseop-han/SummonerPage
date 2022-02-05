@@ -182,6 +182,8 @@
 		074308BD27AC0983003118B8 /* UIVIew */ = {
 			isa = PBXGroup;
 			children = (
+				07440E7827AAA6DD00C9405A /* PaddingLabel.swift */,
+				074308DC27AC5159003118B8 /* RoundButton.swift */,
 				074308B427ABF330003118B8 /* RoundImageView.swift */,
 			);
 			path = UIVIew;
@@ -277,8 +279,6 @@
 				074308BD27AC0983003118B8 /* UIVIew */,
 				07440E7127AA905000C9405A /* Presentable */,
 				07440E7227AA906A00C9405A /* SupportingFiles */,
-				07440E7827AAA6DD00C9405A /* PaddingLabel.swift */,
-				074308DC27AC5159003118B8 /* RoundButton.swift */,
 			);
 			path = SummonerPage;
 			sourceTree = "<group>";
