@@ -28,4 +28,18 @@ extension Match {
         
         return formatter.string(from: .init(gameLength)) ?? ""
     }
+    
+    var createDateString: String {
+        let date = Date(timeIntervalSince1970: .init(createDate))
+        
+        if #available(iOS 13.0, *) {
+            let formatter = RelativeDateTimeFormatter()
+            formatter.dateTimeStyle = .named
+            
+            let dateString = formatter.localizedString(for: date, relativeTo:.init())
+            return dateString
+        } else {
+            return date.getRelativeDate()
+        }
+    }
 }

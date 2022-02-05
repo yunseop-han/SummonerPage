@@ -16,16 +16,7 @@ class LeadingView: UIView {
 
             multiKillLabel.text = match.stats.general.largestMultiKillString
             typeLabel.text = match.gameType
-
-            if #available(iOS 13.0, *) {
-                let date = Date(timeIntervalSince1970: .init(match.createDate))
-                let formatter = RelativeDateTimeFormatter()
-                formatter.dateTimeStyle = .named
-                let dateString = formatter.localizedString(for: date, relativeTo:.init())
-                timeLabel.text = dateString
-            } else {
-                // Fallback on earlier versions
-            }
+            timeLabel.text = match.createDateString
         }
     }
     private let multiKillLabel = PaddingLabel().then {
