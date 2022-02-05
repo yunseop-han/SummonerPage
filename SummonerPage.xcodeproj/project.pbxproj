@@ -54,6 +54,7 @@
 		07440E8027AAC72600C9405A /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */; };
 		07440E8227AACA0200C9405A /* LeagueCellReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07440E8127AACA0200C9405A /* LeagueCellReactor.swift */; };
 		074EEA6C27AEB05D00E0197A /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EEA6B27AEB05D00E0197A /* PositionView.swift */; };
+		074EEA6E27AEBD1600E0197A /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074EEA6D27AEBD1600E0197A /* UIFontExtensions.swift */; };
 		0791F97427ADC4620046F153 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0791F97327ADC4620046F153 /* Reusable.swift */; };
 		257CE6CBE95F0FA5021EC470 /* Pods_SummonerPage_SummonerPageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76DAF2A88B94556007A7493E /* Pods_SummonerPage_SummonerPageUITests.framework */; };
 		2759693DBD349C7460733677 /* Pods_SummonerPageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3416F3AB41D3653DE0AF0E5 /* Pods_SummonerPageTests.framework */; };
@@ -129,6 +130,7 @@
 		07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
 		07440E8127AACA0200C9405A /* LeagueCellReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueCellReactor.swift; sourceTree = "<group>"; };
 		074EEA6B27AEB05D00E0197A /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
+		074EEA6D27AEBD1600E0197A /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		0791F97327ADC4620046F153 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		19B62DCD54707BA21773A4EA /* Pods-SummonerPage-SummonerPageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; path = "Target Support Files/Pods-SummonerPage-SummonerPageUITests/Pods-SummonerPage-SummonerPageUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19B74D544078AD6EEA27D7D9 /* Pods-SummonerPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummonerPage.release.xcconfig"; path = "Target Support Files/Pods-SummonerPage/Pods-SummonerPage.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				07440E7F27AAC72600C9405A /* CALayer+Shadow.swift */,
 				074308D527AC42E2003118B8 /* UIImage+Color.swift */,
 				074308D827AC4F0E003118B8 /* UIColorExtensions.swift */,
+				074EEA6D27AEBD1600E0197A /* UIFontExtensions.swift */,
 				074308DA27AC5027003118B8 /* UIButton+BackgroundColor.swift */,
 				074308E227AD230C003118B8 /* UIStackView+ArangeSubView.swift */,
 				074308E027AD2292003118B8 /* Collection+Safe.swift */,
@@ -652,6 +655,7 @@
 				074308D027AC1B0D003118B8 /* MatchCellReactor.swift in Sources */,
 				07440E8027AAC72600C9405A /* CALayer+Shadow.swift in Sources */,
 				074308E127AD2292003118B8 /* Collection+Safe.swift in Sources */,
+				074EEA6E27AEBD1600E0197A /* UIFontExtensions.swift in Sources */,
 				074308E327AD230C003118B8 /* UIStackView+ArangeSubView.swift in Sources */,
 				074308D427AC40ED003118B8 /* ItemListView.swift in Sources */,
 				074308F727ADB7A8003118B8 /* WinningRateStringConvertible.swift in Sources */,

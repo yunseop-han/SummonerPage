@@ -19,13 +19,13 @@ class PositionView: UIView {
     }
     private let titleLabel = UILabel().then {
         $0.text = "포지션"
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
         $0.textColor = .coolGrey
         $0.textAlignment = .center
     }
     private let imageView = UIImageView()
     private let rateLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
         $0.textColor = .darkGrey
         $0.textAlignment = .center
     }

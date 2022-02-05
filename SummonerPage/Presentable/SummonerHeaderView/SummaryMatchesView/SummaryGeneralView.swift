@@ -24,20 +24,20 @@ class SummaryGeneralView: UIView {
     
     private let titleLabel = UILabel().then {
         $0.textColor = .coolGrey
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
     }
     
     private let resultLabel = UILabel().then {
         $0.textColor = .coolGrey
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
     }
     
     private let kdaLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 14, weight: .bold)
+        $0.font = .systemFont14Bold
     }
     
     private let kdaRatioLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
     }
     
     

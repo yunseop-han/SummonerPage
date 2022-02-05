@@ -20,7 +20,7 @@ class MostChampionsView: UIView {
     private let titleLabel = UILabel().then {
         $0.text = "모스트 승률"
         $0.textColor = .coolGrey
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
         $0.textAlignment = .center
     }
     

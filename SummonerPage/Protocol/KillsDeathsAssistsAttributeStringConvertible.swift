@@ -19,7 +19,8 @@ extension KillsDeathsAssistsAttributeStringConvertible {
         let string = NSMutableAttributedString()
         string.append(.init(string: "\(kills) / "))
         
-        string.append(.init(string: "\(assists)", attributes: [.foregroundColor : UIColor.darkishPink]))
+        let attributes = [NSAttributedString.Key.foregroundColor : UIColor.darkishPink]
+        string.append(.init(string: "\(assists)", attributes: attributes))
         string.append(.init(string: " / \(deaths)"))
         return string
     }

@@ -21,7 +21,7 @@ class ResultView: UIView {
     }
     
     private let resultLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 16, weight: .bold)
+        $0.font = .systemFont16Bold
         $0.textColor = .white
     }
     
@@ -30,7 +30,7 @@ class ResultView: UIView {
     }
     
     private let timeLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont12
         $0.textColor = .white
     }
     

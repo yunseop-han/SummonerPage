@@ -22,7 +22,7 @@ class MostChampionView: UIView {
     
     private let imageView = RoundImageView()
     private let oddsLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
         $0.textAlignment = .center
         $0.textColor = .darkGrey
     }

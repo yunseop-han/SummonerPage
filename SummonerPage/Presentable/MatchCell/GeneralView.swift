@@ -19,12 +19,12 @@ class GeneralView: UIView {
     }
     private let kdaLabel = UILabel().then {
         // TODO: - AttributeString
-        $0.font = .systemFont(ofSize: 16, weight: .bold)
+        $0.font = .systemFont16Bold
         $0.setContentHuggingPriority(.required, for: .vertical)
     }
     private let contributionRateLabel = UILabel().then {
         $0.textColor = .gunmetal
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont12
     }
     
     init() {

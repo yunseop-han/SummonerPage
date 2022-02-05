@@ -24,7 +24,7 @@ class MatchCell: UITableViewCell, View {
         $0.layer.borderColor = UIColor.white.cgColor
         $0.layer.borderWidth = 1
         $0.layer.cornerRadius = 8
-        $0.font = .systemFont(ofSize: 10, weight: .bold)
+        $0.font = .systemFont10Bold
         $0.textColor = .white
         $0.paddingInsets = .init(top: 2, left: 4, bottom: 2, right: 4)
     }

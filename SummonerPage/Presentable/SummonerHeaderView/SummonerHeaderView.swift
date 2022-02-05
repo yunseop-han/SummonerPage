@@ -20,7 +20,7 @@ class SummonerHeaderView: UIView, View {
     private let profileImageView = RoundImageView()
     
     private let levelLabel = PaddingLabel().then {
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont12
         $0.layer.cornerRadius = 12
         // TODO: change color
         $0.backgroundColor = .darkGrey90
@@ -29,7 +29,7 @@ class SummonerHeaderView: UIView, View {
     }
     
     private let summonerNameLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 24, weight: .bold)
+        $0.font = .systemFont24Bold
     }
     
     let refreshButton = RoundButton().then {

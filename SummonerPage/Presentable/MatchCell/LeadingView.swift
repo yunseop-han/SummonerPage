@@ -33,18 +33,18 @@ class LeadingView: UIView {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.darkishPink.cgColor
         $0.textColor = .darkishPink
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
         $0.paddingInsets = .init(top: 4, left: 8, bottom: 3, right: 8)
     }
     private let typeLabel = UILabel().then {
         $0.textAlignment = .right
         $0.textColor = .coolGrey
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont12
     }
     private let timeLabel = UILabel().then {
         $0.textAlignment = .right
         $0.textColor = .coolGrey
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont12
     }
     
     init() {

@@ -20,19 +20,19 @@ class LeagueCell: UICollectionViewCell, View {
     
     private let leagueNameLabel = UILabel().then {
         $0.textColor = .softBlue
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont12
     }
     
     private let tierLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 18, weight: .bold)
+        $0.font = .systemFont18Bold
     }
     
     private let lpLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 12)
+        $0.font = .systemFont12
     }
     
     private let recordLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 10)
+        $0.font = .systemFont10
     }
     
     private let detailButton = UIButton(type: .custom).then {
