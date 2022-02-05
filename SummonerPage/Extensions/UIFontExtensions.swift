@@ -40,6 +40,10 @@ extension UIFont {
         return .systemFont(ofSize: 18)
     }
     
+    class var systemFont18Bold: UIFont {
+        return .systemFont(ofSize: 18, weight: .bold)
+    }
+    
     class var systemFont24Bold: UIFont {
         return .systemFont(ofSize: 24, weight: .bold)
     }
