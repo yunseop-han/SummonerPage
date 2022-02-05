@@ -16,9 +16,7 @@ class SummaryGeneralView: UIView {
             titleLabel.text = "최근 20게임 분석"
             resultLabel.text = "\(summary.wins ?? 0)승 \(summary.losses ?? 0)패"
             kdaLabel.attributedText = summary.kdaAttributedString()
-            let ratio = String(format: "%.3f", summary.kdaRatio())
-            let rate = Int(summary.winningRate())
-            kdaRatioLabel.text = "\(ratio):1 (\(rate)%)"
+            kdaRatioLabel.attributedText = summary.kdaRatioAndWinningRateAttributedString()
         }
     }
     

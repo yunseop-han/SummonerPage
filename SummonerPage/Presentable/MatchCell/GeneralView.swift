@@ -18,7 +18,6 @@ class GeneralView: UIView {
         }
     }
     private let kdaLabel = UILabel().then {
-        // TODO: - AttributeString
         $0.font = .systemFont16Bold
         $0.setContentHuggingPriority(.required, for: .vertical)
     }

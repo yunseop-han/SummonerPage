@@ -15,8 +15,7 @@ class ResultView: UIView {
             guard let match = match else { return }
             backgroundColor = match.isWin ? .softBlue : .darkishPink
             resultLabel.text = match.isWin ? "승" : "패"
-            let time = secondsToHoursMinutesSeconds(match.gameLength)
-            timeLabel.text = "\(time.1):\(time.2)"
+            timeLabel.text = "\(match.gameLengthString)"
         }
     }
     
@@ -64,8 +63,4 @@ class ResultView: UIView {
             make.top.equalTo(divider.snp.bottom).offset(6)
         }
     }
-}
-
-func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
-    return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct General: Codable, KillsDeathsAssistsAttributeStringConvertible, Equatable {
+struct General: Codable, KillsDeathsAssitsConvertible, Equatable {
     let kills: Int
     let deaths: Int
     let assists: Int

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Summary: Codable, KillsDeathsAssistsAttributeStringConvertible, WinningRateStringConvertible {
+struct Summary: Codable, AvarageKillsDeathsAssistsConvertible, WinningRateStringConvertible {
     var wins: Int? = 0
     var losses: Int? = 0
     let kills: Int

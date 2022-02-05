@@ -13,11 +13,11 @@ protocol WinningRateStringConvertible {
 }
 
 extension WinningRateStringConvertible {
-    func winningRate() -> Double {
+    func winningRate() -> Int {
         guard let wins = wins else { return 0 }
         guard let losses = losses else { return 0 }
         
         let record = Double(wins) / (Double(wins) + Double(losses)) * 100.0
-        return record
+        return Int(record)
     }
 }

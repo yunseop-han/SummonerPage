@@ -19,3 +19,13 @@ struct Match: Codable, Equatable {
     let gameType: String
     let stats: Stats
 }
+
+extension Match {
+    var gameLengthString: String {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.allowedUnits = [.hour, .minute, .second]
+        
+        return formatter.string(from: .init(gameLength)) ?? ""
+    }
+}
