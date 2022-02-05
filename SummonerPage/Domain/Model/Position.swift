@@ -8,7 +8,7 @@
 import Foundation
 
 struct Position: Codable, WinningRateStringConvertible {
-    enum PositionType: String, Codable {
+    enum PositionType: String, Codable, Equatable {
         case support = "SUP"
         case jungle = "JNG"
         case top = "TOP"

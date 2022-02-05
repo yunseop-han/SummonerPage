@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct League: Codable, WinningRateStringConvertible {
+struct League: Codable, Equatable, WinningRateStringConvertible {
     var wins: Int? = 0
     var losses: Int? = 0
     let tierRank: Tier

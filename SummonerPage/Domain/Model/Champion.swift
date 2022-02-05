@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Champion: Codable, WinningRateStringConvertible {
+struct Champion: Codable, Equatable, WinningRateStringConvertible {
     let imageUrl: String
     var losses: Int? = 0
     var wins: Int? = 0

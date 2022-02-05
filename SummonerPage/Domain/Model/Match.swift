@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Match: Codable {
+struct Match: Codable, Equatable {
     let mmr: Int?
     let champion: Champion
     let spells: [Spell]

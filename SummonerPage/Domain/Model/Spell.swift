@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Spell: Codable {
+struct Spell: Codable, Equatable {
     let imageUrl: String
 }

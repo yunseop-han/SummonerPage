@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct General: Codable, KillsDeathsAssistsAttributeStringConvertible {
+struct General: Codable, KillsDeathsAssistsAttributeStringConvertible, Equatable {
     let kills: Int
     let deaths: Int
     let assists: Int
@@ -15,7 +15,7 @@ struct General: Codable, KillsDeathsAssistsAttributeStringConvertible {
     let largestMultiKillString: String
     let opScoreBadge: Badge
     
-    enum Badge: String, Codable {
+    enum Badge: String, Codable, Equatable {
         case ace = "ACE"
         case none = ""
     }

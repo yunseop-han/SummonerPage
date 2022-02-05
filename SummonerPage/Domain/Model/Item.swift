@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Item: Codable {
+struct Item: Codable, Equatable {
     let imageUrl: String
 }

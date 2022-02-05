@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Summoner: Codable {
+struct Summoner: Codable, Equatable {
     let name: String
     let level: Int
     let profileImageUrl: String

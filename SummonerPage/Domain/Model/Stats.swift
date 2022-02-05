@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Stats: Codable {
+struct Stats: Codable, Equatable {
     let general: General
 }

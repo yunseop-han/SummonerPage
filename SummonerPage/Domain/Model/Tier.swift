@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Tier: Codable {
+struct Tier: Codable, Equatable {
     let name: String
     let tier: String
     let tierDivision: String
