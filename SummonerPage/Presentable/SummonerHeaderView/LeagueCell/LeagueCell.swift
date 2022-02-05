@@ -35,8 +35,11 @@ class LeagueCell: UICollectionViewCell, View {
         $0.font = .systemFont(ofSize: 10)
     }
     
-    private let detailButton = UIView().then {
-        $0.backgroundColor = .yellow
+    private let detailButton = UIButton(type: .custom).then {
+        $0.setImage(.init(named: "iconArrowRight"), for: .normal)
+        $0.setBackgroundColor(.paleGrey, for: .normal)
+        $0.layer.cornerRadius = 20
+        $0.clipsToBounds = true
     }
     
     override init(frame: CGRect) {
