@@ -8,6 +8,16 @@
 import Foundation
 
 struct Position: Codable, Equatable, WinningRateStringConvertible {
+    let type: PositionType
+    var games: Int
+    var wins: Int? = 0
+    var losses: Int? = 0
+    
+    enum CodingKeys: String, CodingKey {
+        case type = "position"
+        case games, wins, losses
+    }
+    
     enum PositionType: String, Codable, Equatable {
         case support = "SUP"
         case jungle = "JNG"
@@ -30,8 +40,4 @@ struct Position: Codable, Equatable, WinningRateStringConvertible {
             }
         }
     }
-    let position: PositionType
-    var games: Int
-    var wins: Int? = 0
-    var losses: Int? = 0
 }

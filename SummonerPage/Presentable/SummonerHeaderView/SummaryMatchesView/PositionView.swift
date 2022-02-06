@@ -12,9 +12,10 @@ import Then
 class PositionView: UIView {
     var positions: [Position] = [] {
         didSet{
-            imageView.image = UIImage(named: positions.first?.position.iconName ?? "")
-            let rate = positions.first?.winningRate()
-            rateLabel.text = "\(Int(rate ?? 0))%"
+            guard let position = positions.first else { return }
+            imageView.image = UIImage(named: position.type.iconName)
+            let rate = position.winningRate()
+            rateLabel.text = "\(rate)%"
         }
     }
     private let titleLabel = UILabel().then {

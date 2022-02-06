@@ -39,7 +39,7 @@ class MostChampionView: UIView {
         guard let champion = champion else { return }
         let rate = champion.winningRate()
         winningRateLabel.textColor = rate == 100 ? .darkishPink : .darkGrey
-        winningRateLabel.text = "\(rate) %"
+        winningRateLabel.text = "\(rate)%"
     }
     
     private func setupConstraints() {
