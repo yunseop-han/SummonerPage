@@ -32,19 +32,6 @@ class SummonerViewController: UIViewController, View {
         setupConstraints()
     }
     
-    private func setupConstraints() {
-        view.addSubview(tableView)
-        
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        summonerView.snp.makeConstraints { make in
-            make.width.equalTo(tableView.snp.width)
-            make.top.leading.trailing.equalToSuperview()
-        }
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -88,6 +75,19 @@ class SummonerViewController: UIViewController, View {
                 cell.reactor = MatchCellReactor(match: element)
                 return cell
             }.disposed(by: disposeBag)
+    }
+    
+    private func setupConstraints() {
+        view.addSubview(tableView)
+        
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        summonerView.snp.makeConstraints { make in
+            make.width.equalTo(tableView.snp.width)
+            make.top.leading.trailing.equalToSuperview()
+        }
     }
 }
 

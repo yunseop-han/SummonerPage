@@ -22,7 +22,6 @@ class SummonerHeaderView: UIView, View {
     private let levelLabel = PaddingLabel().then {
         $0.font = .systemFont12
         $0.layer.cornerRadius = 12
-        // TODO: change color
         $0.backgroundColor = .darkGrey90
         $0.textColor = .white
         $0.paddingInsets = UIEdgeInsets(top: 5, left: 8, bottom: 5, right: 8)

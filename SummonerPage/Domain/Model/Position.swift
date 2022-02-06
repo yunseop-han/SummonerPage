@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Position: Codable, WinningRateStringConvertible {
+struct Position: Codable, Equatable, WinningRateStringConvertible {
     enum PositionType: String, Codable, Equatable {
         case support = "SUP"
         case jungle = "JNG"
