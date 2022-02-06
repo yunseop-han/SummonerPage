@@ -63,7 +63,8 @@ class SummaryMatchsView: UIView {
         summaryLeadingView.snp.makeConstraints { make in
             make.top.equalTo(summaryMostChampionView)
             make.leading.equalTo(summaryMostChampionView.snp.trailing).offset(10)
-            make.trailing.bottom.equalToSuperview()
+            make.bottom.equalTo(summaryMostChampionView.snp.bottom)
+            make.trailing.equalToSuperview().inset(12)
         }
     }
 }

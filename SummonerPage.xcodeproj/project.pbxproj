@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071F179327AFA9E500AAEF62 /* AvarageKillsDeathsAssistsConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071F179227AFA9E500AAEF62 /* AvarageKillsDeathsAssistsConvertible.swift */; };
 		073C1DDF27AEFCD200614B84 /* SummonerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C1DDE27AEFCD200614B84 /* SummonerResponse.swift */; };
 		073C1DE127AEFCEE00614B84 /* MatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C1DE027AEFCEE00614B84 /* MatchResponse.swift */; };
 		073C1DE727AF0DD900614B84 /* Date+RelativeDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073C1DE627AF0DD900614B84 /* Date+RelativeDate.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		071F179227AFA9E500AAEF62 /* AvarageKillsDeathsAssistsConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvarageKillsDeathsAssistsConvertible.swift; sourceTree = "<group>"; };
 		073C1DDE27AEFCD200614B84 /* SummonerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerResponse.swift; sourceTree = "<group>"; };
 		073C1DE027AEFCEE00614B84 /* MatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponse.swift; sourceTree = "<group>"; };
 		073C1DE627AF0DD900614B84 /* Date+RelativeDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+RelativeDate.swift"; sourceTree = "<group>"; };
@@ -207,9 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				074308CA27AC0EA1003118B8 /* MatchCell.swift */,
+				074308CF27AC1B0D003118B8 /* MatchCellReactor.swift */,
 				074308E727AD72BE003118B8 /* GeneralView.swift */,
 				074308CD27AC1AFC003118B8 /* ResultView.swift */,
-				074308CF27AC1B0D003118B8 /* MatchCellReactor.swift */,
 				074308D127AC3BA8003118B8 /* TileImageView.swift */,
 				074308D327AC40ED003118B8 /* ItemListView.swift */,
 				074308E427AD2957003118B8 /* LeadingView.swift */,
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				074308F827ADB835003118B8 /* KillsDeathsAssitsConvertible.swift */,
+				071F179227AFA9E500AAEF62 /* AvarageKillsDeathsAssistsConvertible.swift */,
 				074308F627ADB7A8003118B8 /* WinningRateStringConvertible.swift */,
 				0791F97327ADC4620046F153 /* Reusable.swift */,
 			);
@@ -708,6 +711,7 @@
 				073C1DDF27AEFCD200614B84 /* SummonerResponse.swift in Sources */,
 				07440E8227AACA0200C9405A /* LeagueCellReactor.swift in Sources */,
 				074308C327AC0A4D003118B8 /* Spell.swift in Sources */,
+				071F179327AFA9E500AAEF62 /* AvarageKillsDeathsAssistsConvertible.swift in Sources */,
 				074308B527ABF330003118B8 /* RoundImageView.swift in Sources */,
 				07440E7427AA91BB00C9405A /* League.swift in Sources */,
 				074308CB27AC0EA1003118B8 /* MatchCell.swift in Sources */,
